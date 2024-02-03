@@ -9,12 +9,12 @@ const { width, height } = Dimensions.get('window');
 const ConfirmPasse = () => {
     const navigation = useNavigation();
 
-    const navlogin = () => {
-      navigation.navigate('Passe');
+    const navHome = () => {
+      navigation.navigate('HomeScreen');
     };
   
     const back = () => {
-      navigation.navigate('EmailScreen');
+      navigation.navigate('Passe');
     };
  
   return (
@@ -45,7 +45,7 @@ const ConfirmPasse = () => {
             placeholderTextColor="#ccc"
           />
 </View>
-<TouchableOpacity style={styles.changeEmailButton} onPress={navlogin}>
+<TouchableOpacity style={styles.changeEmailButton} onPress={navHome}>
   <Text style={styles.changeEmailButtonText}>Confirmer</Text>
 </TouchableOpacity>
 </ScrollView>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
 
   scrollView: {
-    padding: 20,
+    padding: 40,
   },
   header: {
     flexDirection: 'row',

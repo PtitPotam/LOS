@@ -1,7 +1,8 @@
-/*import React from 'react';
+import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { AntDesign, FontAwesome5 } from '@expo/vector-icons'; // Ensure you have expo vector icons installed
- 
+import { useNavigation } from '@react-navigation/native';
+
 const { width } = Dimensions.get('window');
  
 const Card = ({ title, imageSource }) => (
@@ -10,22 +11,30 @@ const Card = ({ title, imageSource }) => (
 <Text style={styles.cardTitle}>{title}</Text>
 </View>
 );
- 
+
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
+  const navlogin = () => {
+    navigation.navigate('Inbox');
+  };
+
+  const back = () => {
+    navigation.navigate('Passe');
+  };
+
   return (
 <View style={styles.container}>
 <View style={styles.header}>
 <Text style={styles.logo}>LOS</Text>
-<View style={styles.icons}>
+<View style={styles.icons} >
 <AntDesign name="bells" size={24} color="white" style={styles.icon} />
 <FontAwesome5 name="comments" size={24} color="white" style={styles.icon} />
 </View>
 </View>
-<ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
-<Card title="SOIRÉE" imageSource={require('./assets/soiree.png')} />
-<Card title="AIDE" imageSource={require('./assets/aide.png')} />
-        
-/*</ScrollView>
+<ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>   
+</ScrollView>
 </View>
   );
 };
@@ -33,16 +42,16 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#444',                                                                                                                                                                   
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 20,
+    padding: 50,
   },
   logo: {
-    fontSize: width * 0.1,
+    fontSize: width * 0.06,                  
     color: 'white',
     fontWeight: 'bold',
   },
@@ -81,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
  
-export { HomeScreen };*/
+export { HomeScreen };

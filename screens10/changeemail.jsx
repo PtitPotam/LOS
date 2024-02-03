@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, TextInput, Alert, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
  
 // Récupérez les dimensions de l'écran actuel
 const { width } = Dimensions.get('window');
  
 const ModifEmail = () => {
+    const navigation = useNavigation();
+
+    const navlogin = () => {
+      navigation.navigate('ChangePassword');
+    };
+  
+    const back = () => {
+      navigation.navigate('Compte');
+    };
+
   const [currentPassword, setCurrentPassword] = useState('');
   const [newEmail, setNewEmail] = useState('');
   const [confirmNewEmail, setConfirmNewEmail] = useState('');
@@ -22,7 +33,9 @@ const ModifEmail = () => {
 <View style={styles.container}>
 <ScrollView contentContainerStyle={styles.scrollView}>
 <View style={styles.header}>
+<TouchableOpacity  onPress={back}>
 <Ionicons name="arrow-back-outline" size={24} color="white" />
+</TouchableOpacity>
 <Image
             source={require('../assets/logo.png')}
             resizeMode="contain"
@@ -83,12 +96,12 @@ const styles = StyleSheet.create({
   },
 
   scrollView: {
-    padding: 20,
+    padding: 50,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 0,
   },
   headerTitle: {
     flex: 1, // Assure que le logo est centré

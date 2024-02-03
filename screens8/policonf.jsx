@@ -1,13 +1,23 @@
 import { View, Text, StyleSheet, Image, ScrollView,  } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
  
    
   const Politique = () => {
+    const navigation = useNavigation();
+
+    const navlogin = () => {
+      navigation.navigate('Login');
+    };
+  
+    const back = () => {
+      navigation.navigate('ProfileScreen');
+    };
     return (
   <View style={styles.container}>
   <ScrollView style={styles.scrollView}>
   <View style={styles.header}>
-  <Ionicons name="arrow-back-outline" size={24} color="white" onPress={() => {}} />
+  <Ionicons name="arrow-back-outline" size={24} color="white" onPress={back} />
   <Image
               source={require('../assets/logo.png')}
               style={styles.headerTitle}>
