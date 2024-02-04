@@ -12,7 +12,7 @@ const Login = () => {
   };
 
   const handleSignIn = () => {
-    navigation.navigate('');
+    navigation.navigate('HomeScreen');
   };
 
   return (
@@ -31,28 +31,28 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1D1D1F', // Fond noir
+    backgroundColor: '#1D1D1F', 
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20%',
   },
   logo: {
-    fontSize: height < 650 ? 36 : 48, // Taille de police plus petite pour les petits appareils
+    fontSize: height < 650 ? 36 : 48, 
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: height < 650 ? 60 : 120, // Moins d'espacement pour les petits appareils
+    marginBottom: height < 650 ? 60 : 120, 
   },
   button: {
-    backgroundColor: '#8e44ad', // Couleur violet
+    backgroundColor: '#8e44ad', 
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 25,
-    marginVertical: height < 650 ? 5 : 10, // Moins d'espacement pour les petits appareils
+    marginVertical: height < 650 ? 5 : 10, 
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    color: '#fff', // Texte blanc
+    color: '#fff', 
     fontSize: 18,
   },
 });

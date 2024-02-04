@@ -3,31 +3,17 @@ import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const data = [
-  { id: '1', userImage: 'https://img.freepik.com/photos-gratuite/plan-profil-fille-aristocratique-chemisier-volants-dame-fleurs-dans-ses-cheveux-posant-fierement-contre-mur-bleu_197531-14304.jpg', imageUrl: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D', username: 'Sarah', likes: 283 },
-  { id: '2', userImage: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg', imageUrl: 'https://res.cloudinary.com/hello-tickets/image/upload/c_limit,f_auto,q_auto,w_1300/v1665546545/tcjr9rtr5smfzgdgofcg.jpg', username: 'Dimitri', likes: 1579 },
-  { id: '3', userImage: 'https://www.imprim-deco.fr/6319-full_default/sticker-profil-new-york.jpg', imageUrl: 'https://img.freepik.com/photos-gratuite/central-park-manhattan-new-york-immense-magnifique-parc-entoure-gratte-ciel-etang_181624-50335.jpg', username: 'New York City', likes: 678065 },
-  // Ajoutez plus de données si nécessaire
-  
-];
 
-const HomeScreen = () => {
+const SoireScreen = () => {
   const navigation = useNavigation();
 
   const navlogin = () => {
     navigation.navigate('Inbox');
   };
       
-  const navperson = () => {
-    navigation.navigate('ProfileScreen');
-  };
-
-  const navsoiree = () => {
-    navigation.navigate('SoireScreen');
-  };
 
   const back = () => {
-    navigation.navigate('Login');
+    navigation.navigate('HomeScreen');
   };
 
 
@@ -55,8 +41,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navButton} onPress={navperson}>
-          <Ionicons name="person-outline" size={24} color="#B371D2" />
+        <TouchableOpacity style={styles.navButton} onPress={back}>
+          <Ionicons  name="arrow-back-outline" size={24} color="#B371D2" />
         </TouchableOpacity>
         <Text style={styles.navTitle}>LOS</Text>
         <TouchableOpacity style={styles.navButton} onPress={navlogin}>
@@ -64,34 +50,106 @@ const HomeScreen = () => {
         </TouchableOpacity>
         
       </View>
+
+     
+
       <View style={styles.squareContainer}>
         <TouchableOpacity style={styles.square}>
-        <TouchableOpacity style={styles.navButton} onPress={navsoiree}>
-
           <Image
             source={require('../assets/soiree.png')}
             style={styles.headerTitle}
             resizeMode="cover"
             
-            
           />
-       
-           <View style={styles.textContainer }>
+           <View style={styles.textContainer}>
+        {/* Texte superposé */}
         <Text style={styles.overlayText}>Soirée</Text>
-        
       </View>
         </TouchableOpacity>
-        </TouchableOpacity>
+
       </View>
 
+
+
+      {/* Carrés modifiables et cliquables */}
+     
+      <View style={styles.carre}>
+        <TouchableOpacity style={styles.square}>
+        <Image
+            source={require('../assets/mada.jpg')}
+            style={styles.headerTitle}
+            resizeMode="cover"
+            
+          />
+         
+           <View style={styles.textContainer}>
+        {/* Texte superposé */}
+        <Text style={styles.overlayText}>Mada</Text>
+      </View>
+        </TouchableOpacity>
+
+
+        <View style={styles.textcarre}>
+       
+    <Text style={{ color: 'white' }}>05/02{"\n"} </Text>
+    <Text style={{ color: 'white' }}>30% de réductions de 20H à 22H {"\n"} </Text>
+    <Text style={{ color: 'white' }}>20 Rue Piliers de Tutelle, Bordeaux </Text>
+ 
+        </View>
+
+      </View>
+
+    
+      <View style={styles.carre}>
+        <TouchableOpacity style={styles.square}>
+        <Image
+            source={require('../assets/joya.png')}
+            style={styles.headerTitle}
+            resizeMode="cover"
+            
+          />
+          
+     <View style={styles.textContainer}>
+     <Text style={styles.overlayText}>Joya</Text>
+     </View>
+        </TouchableOpacity>
+        <View style={styles.textcarre}>
+
+       <Text style={{ color: 'white' }}>05/02{"\n"} </Text>
+       <Text style={{ color: 'white' }}>1 bouteille acheté, 1 offerte {"\n"} </Text>
+       <Text style={{ color: 'white' }}>106 Quai Lawton, 33300 Bordeaux </Text>
+    
+           </View>
+
+      </View>
+
+
+    
+      <View style={styles.carre}>
+        <TouchableOpacity style={styles.square}>
+        <Image
+            source={require('../assets/carnaval.png')}
+            style={styles.headerTitle}
+            resizeMode="cover"
+            
+          />
+         
+           <View style={styles.textContainer}>
+           <Text style={styles.overlayText}>Carnaval</Text>
+      </View>
+        </TouchableOpacity>
+
+        <View style={styles.textcarre}>
+
+<Text style={{ color: 'white' }}>06/02{"\n"} </Text>
+<Text style={{ color: 'white' }}>-50% avec la carte étudiante {"\n"} </Text>
+<Text style={{ color: 'white' }}>14bis RueDuffour Dubergier,Bdx </Text>
+
+    </View>
+
+      </View>
       
-      
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        style={styles.content}
-      />
+  
     
     </View>
     
@@ -115,7 +173,7 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   navButton: {
-    padding: 0,
+    padding: 10,
   },
   navTitle: {
     fontWeight: 'white',
@@ -126,12 +184,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   post: {
-    marginBottom: 30,
+    marginBottom: 0,
   },
   postHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: 0,
   },
   avatar: {
     width: 40,
@@ -144,14 +202,15 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   postImage: {
-    width: '100%',
-    height: 200,
-    resizeMode: 'cover',
+    width: '40%',
+    height: 150,
+    resizeMode: 'center',
+    padding: '10%'
   },
   postFooter: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: 0,
   },
   iconContainer: {
     marginRight: 20,
@@ -172,18 +231,19 @@ const styles = StyleSheet.create({
   square: {
     width: 115,
     height: 115,
-    backgroundColor: '#B371D2',
-    borderRadius: 40,
+    borderRadius: 0,
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
+
   squareImage: {
-    width: '70%',
-    height: '70%',
+   
     borderRadius: 40,
   },
 
   textContainer: {
+    color: 'white',
     position: 'absolute', // Position absolue par rapport au conteneur parent
     top: 0, // Aligné en haut
     left: 0, // Aligné à gauche
@@ -191,7 +251,7 @@ const styles = StyleSheet.create({
     bottom: 0, // Aligné en bas
     justifyContent: 'center', // Centrer verticalement
     alignItems: 'center', // Centrer horizontalement
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fond semi-transparent pour le contraste
+    backgroundColor: 'rgba(0, 0, 0, 0)', // Fond semi-transparent pour le contraste
     fontWeight: 'white',
   },
   overlayText: {
@@ -199,6 +259,23 @@ const styles = StyleSheet.create({
     fontSize: 20, // Taille du texte
     fontWeight: 'white',
   },
+   carre: {
+    flexDirection: 'row',
+    justifyContent: 'left',
+    paddingHorizontal: 20,
+    marginTop: 30,
+    borderRadius: 60,
+    paddingVertical: 10,
+  },
+
+  textcarre: {
+    padding: 0,
+    paddingHorizontal: 20,
+    paddingVertical: 10, 
+    color: 'white', // Modifier la couleur du texte en blanc
+    fontSize: 20, // Taille du texte
+    fontWeight: 'bold', // Police en gras
+     },
 });
 
-export { HomeScreen };
+export { SoireScreen };

@@ -32,7 +32,7 @@ const Compte = () => {
 <ScrollView style={styles.scrollView}>
 <View style={styles.header}>
 <TouchableOpacity  onPress={back}>
-<Ionicons style={styles.flèche} name="arrow-back-outline" size={24} color="white" />
+<Ionicons style={styles.flèche} name="arrow-back-outline" size={24} color="#B371D2" />
 </TouchableOpacity>
 <Image
             source={require('../assets/logo.png')}

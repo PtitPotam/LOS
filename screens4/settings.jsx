@@ -28,13 +28,17 @@ const ProfileScreen = () => {
     };
 
     const back = () => {
+        navigation.navigate('HomeScreen');
+      };
+
+    /*const back = () => {
       navigation.navigate('Name');
-    };
+    };*/
   return (
 <View style={styles.container}>
 <ScrollView style={styles.scrollView}>
 <View style={styles.header}>
-<Ionicons name="arrow-back-outline" size={24} color="white" />
+<Ionicons name="arrow-back-outline" size={24} color="#B371D2" onPress={back}/>
 <Image
             source={require('../assets/logo.png')}
             style={styles.headerTitle}>
@@ -115,23 +119,22 @@ const styles = StyleSheet.create({
   menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between', // Ensures items are spaced out
+    justifyContent: 'space-between', 
     paddingVertical: 12,
-    paddingHorizontal: 60, // Increase horizontal padding if needed
-    borderBottomWidth: StyleSheet.hairlineWidth, // Optional: adds a separator
-    borderBottomColor: 'rgba(255, 255, 255, 0.2)', // Optional: separator color
+    paddingHorizontal: 60, 
+    borderBottomWidth: StyleSheet.hairlineWidth, 
+    borderBottomColor: 'rgba(255, 255, 255, 0.2)', 
   },
   menuItemText: {
     color: 'white',
-    fontSize: 16, // Adjust the font size as needed
-    // Remove flex: 1 if you want to ensure the text does not stretch
-    marginRight: 16, // Ensure there is space between the text and the chevron icon
+    fontSize: 16, 
+    marginRight: 16, 
   },
  
  
   infoSection: {
     borderRadius: 12,
-    backgroundColor: '#444',
+    backgroundColor: '#8e44ad',
     padding: 10,
   },
   footer: {

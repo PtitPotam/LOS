@@ -4,14 +4,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
  
-// Obtenez les dimensions de l'écran
 const { width, height } = Dimensions.get('window');
  
 const Name = () => {
   const navigation = useNavigation();
 
   const navlogin = () => {
-    navigation.navigate('Blaze');
+    navigation.navigate('HomeScreen');
   };
 
   const back = () => {
@@ -24,7 +23,7 @@ const Name = () => {
 <ScrollView contentContainerStyle={styles.scrollView}>
 <View style={styles.header}>
 <TouchableOpacity  onPress={back}>
-  <Ionicons name="arrow-back-outline" size={24} color="white" />
+  <Ionicons name="arrow-back-outline" size={24} color="#B371D2" />
 </TouchableOpacity>
 <Image
             source={require('../assets/logo.png')}
@@ -34,7 +33,7 @@ const Name = () => {
 </View>
  
         <View style={styles.profileSection}>
-<Text style={styles.settingsText}>Quel est votre Prénom ? </Text>
+<Text style={styles.settingsText}> Rentre t'es données </Text>
 </View>
  
         <View style={styles.formSection}>
@@ -47,10 +46,59 @@ const Name = () => {
             placeholderTextColor="#ccc"
           />
 </View>
+
+<View style={styles.formSection}>
+
+<TextInput
+            style={styles.input}
+            placeholder="Nom"
+            keyboardType="nom"
+            onChangeText={(text) => setNewEmail(text)}
+            placeholderTextColor="#ccc"
+          />
+</View>
+
+<View style={styles.formSection}>
+
+<TextInput
+            style={styles.input}
+            placeholder="Email"
+            keyboardType="email"
+            onChangeText={(text) => setNewEmail(text)}
+            placeholderTextColor="#ccc"
+          />
+</View>
+
+<View style={styles.formSection}>
+
+<TextInput
+            style={styles.input}
+            placeholder="Mot de passe"
+            keyboardType="mot de passe"
+            onChangeText={(text) => setNewEmail(text)}
+            placeholderTextColor="#ccc"
+          />
+</View>
+
+<View style={styles.formSection}>
+
+<TextInput
+            style={styles.input}
+            placeholder="Confirme ton mot de passe"
+            keyboardType="confirle ton mot de passe"
+            onChangeText={(text) => setNewEmail(text)}
+            placeholderTextColor="#ccc"
+          />
+</View>
+
+
 <TouchableOpacity style={styles.changeEmailButton} onPress={navlogin}>
   <Text style={styles.changeEmailButtonText}>Confirmer</Text>
 </TouchableOpacity>
+
+
 </ScrollView>
+
 </View>
   );
 };
@@ -72,14 +120,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   headerTitle: {
-    flex: 1, // Assure que le logo est centré
-    height: 60, // Hauteur fixe pour le logo
-    width: null, // Assure que le logo garde son ratio
+    flex: 1, 
+    height: 60, 
+    width: null, 
   },
   profileSection: {
     alignItems: 'center',
     marginBottom: 20,
-    marginTop: 150,
+    marginTop: 80,
   },
   avatar: {
     width: 80,

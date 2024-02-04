@@ -41,7 +41,7 @@ const Inbox = () => {
   const navigation = useNavigation();
 
   const navmessage = () => {
-    navigation.navigate('passe');
+    navigation.navigate('');
   };
 
   const back = () => {
@@ -52,8 +52,10 @@ const Inbox = () => {
   return (
     <View style={styles.container}>
       {/* Header */}
+
+
       <View style={styles.header}>
-        <Ionicons name="arrow-back-outline" size={24} color="white" />
+        <Ionicons name="arrow-back-outline" size={24} color="#B371D2" onPress={back} />
         <Image
           source={require('../assets/logo.png')}
           style={styles.headerTitle}
@@ -84,8 +86,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
   },
   arrowBack: {
-    position: 'absolute',
-    left: 16,
+    position: 'center',
+    left: 2,
   },
   headerTitle: {
     width: 120, // Adjust the width as needed

@@ -17,7 +17,7 @@ import { useNavigation } from '@react-navigation/native';
   <View style={styles.container}>
   <ScrollView style={styles.scrollView}>
   <View style={styles.header}>
-  <Ionicons name="arrow-back-outline" size={24} color="white" onPress={back} />
+  <Ionicons name="arrow-back-outline" size={24} color="#B371D2" onPress={back} />
   <Image
               source={require('../assets/logo.png')}
               style={styles.headerTitle}>

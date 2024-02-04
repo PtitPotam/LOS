@@ -34,7 +34,7 @@ const ChangePassword = () => {
 <ScrollView contentContainerStyle={styles.scrollView}>
 <View style={styles.header}>
 <TouchableOpacity  onPress={back}>
-<Ionicons name="arrow-back-outline" size={24} color="white" />
+<Ionicons name="arrow-back-outline" size={24} color="#B371D2" />
 </TouchableOpacity>
 <Image
             source={require('../assets/logo.png')}
